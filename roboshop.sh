@@ -1,11 +1,12 @@
 #!/bin/bash
-
+echo "Creating instances and updating DNS records for roboshop services"
 AMI_ID="ami-09c813fb71547fc4f"
 SG_ID="sg-0cc40d7b7841db6e7" # replace with your SG ID
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "frontend")
 ZONE_ID="Z014152013UT6O7WG2G8R" # replace with your ZONE ID
 DOMAIN_NAME="vikaskonda.in" # replace with your domain
 
+echo "creating instances and updating DNS records for the following instances: ${INSTANCES[@]}"
 #for instance in ${INSTANCES[@]}
 for instance in $@
 do
